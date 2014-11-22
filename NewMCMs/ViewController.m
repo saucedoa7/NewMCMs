@@ -9,31 +9,20 @@
 #import "ViewController.h"
 #import "Pokemon.h"
 
-@interface ViewController ()<UITableViewDataSource, UITableViewDelegate>
+@interface ViewController ()<UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
+
 @property NSMutableArray *pokemons;
 @property (strong, nonatomic) IBOutlet UITableView *pokemonTableView;
 @property (strong, nonatomic) IBOutlet UITextField *txtPokemon;
 @property (strong, nonatomic) IBOutlet UITextField *txtStage;
 @property (strong, nonatomic) IBOutlet UITextField *txtLevel;
+@property (strong, nonatomic) IBOutlet UIButton *btnAddPokemon;
+@property (strong, nonatomic) IBOutlet UITapGestureRecognizer *tapToHideKB;
 
 @end
 
 @implementation ViewController
-- (IBAction)onAddButtonPressed:(UIButton *)sender {
-    Pokemon *pokemon = [[Pokemon alloc] initWithName:self.txtPokemon.text
-                                               stage:[self.txtStage.text intValue]
-                                               level:[self.txtLevel.text intValue]];
-    [self.pokemons addObject:pokemon];
-    [self.pokemonTableView reloadData];
 
-    self.txtPokemon.text = @"";
-    self.txtStage.text = @"";
-    self.txtLevel.text = @"";
-
-    for (Pokemon *poke in self.pokemons) {
-        NSLog(@"%@, %d, %d",poke.name, poke.stage, poke.level);
-    }
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -51,6 +40,36 @@
 
     self.pokemons = [[NSMutableArray alloc]initWithObjects:charmander, charmeleon, charazard, nil];
     
+//Hide keyboard when tapping anywhere outside the Keyboard 1/3
+    self.tapToHideKB = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                               action:@selector(hideKeyboard)];
+    [self.pokemonTableView addGestureRecognizer:self.tapToHideKB];
+}
+
+// Hide Keyboard function 2/3
+-(void)hideKeyboard{
+    [self.txtLevel resignFirstResponder];
+    [self.txtPokemon resignFirstResponder];
+    [self.txtStage resignFirstResponder];
+}
+
+- (IBAction)onAddButtonPressed:(UIButton *)sender {
+    Pokemon *pokemon = [[Pokemon alloc] initWithName:self.txtPokemon.text
+                                               stage:[self.txtStage.text intValue]
+                                               level:[self.txtLevel.text intValue]];
+    [self.pokemons addObject:pokemon];
+    [self.pokemonTableView reloadData];
+
+    self.txtPokemon.text = @"";
+    self.txtStage.text = @"";
+    self.txtLevel.text = @"";
+
+    for (Pokemon *poke in self.pokemons) {
+        NSLog(@"%@, %d, %d",poke.name, poke.stage, poke.level);
+    }
+    
+//Hide keybaord when button pressed 3/3
+    [self hideKeyboard];
 
 }
 

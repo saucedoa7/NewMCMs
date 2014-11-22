@@ -425,6 +425,7 @@
 				50E6660A1A2023F600211549 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		50E6660B1A2023F600211549 /* Build configuration list for PBXNativeTarget "NewMCMsTests" */ = {
 			isa = XCConfigurationList;
@@ -433,6 +434,7 @@
 				50E6660D1A2023F600211549 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
