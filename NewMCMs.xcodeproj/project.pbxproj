@@ -15,6 +15,7 @@
 		50E665F61A2023F600211549 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50E665F51A2023F600211549 /* Images.xcassets */; };
 		50E665F91A2023F600211549 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50E665F71A2023F600211549 /* LaunchScreen.xib */; };
 		50E666051A2023F600211549 /* NewMCMsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 50E666041A2023F600211549 /* NewMCMsTests.m */; };
+		50E666101A20243600211549 /* Pokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 50E6660F1A20243600211549 /* Pokemon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,8 @@
 		50E665FE1A2023F600211549 /* NewMCMsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewMCMsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		50E666031A2023F600211549 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50E666041A2023F600211549 /* NewMCMsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewMCMsTests.m; sourceTree = "<group>"; };
+		50E6660E1A20243600211549 /* Pokemon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pokemon.h; sourceTree = "<group>"; };
+		50E6660F1A20243600211549 /* Pokemon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pokemon.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +91,8 @@
 				50E665EF1A2023F600211549 /* ViewController.h */,
 				50E665F01A2023F600211549 /* ViewController.m */,
 				50E665F21A2023F600211549 /* Main.storyboard */,
+				50E6660E1A20243600211549 /* Pokemon.h */,
+				50E6660F1A20243600211549 /* Pokemon.m */,
 				50E665F51A2023F600211549 /* Images.xcassets */,
 				50E665F71A2023F600211549 /* LaunchScreen.xib */,
 				50E665EC1A2023F600211549 /* NewMCMs.xcdatamodeld */,
@@ -171,6 +176,7 @@
 				TargetAttributes = {
 					50E665E11A2023F600211549 = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = 36MM5W3VDB;
 					};
 					50E665FD1A2023F600211549 = {
 						CreatedOnToolsVersion = 6.1;
@@ -224,6 +230,7 @@
 			files = (
 				50E665EE1A2023F600211549 /* NewMCMs.xcdatamodeld in Sources */,
 				50E665EB1A2023F600211549 /* AppDelegate.m in Sources */,
+				50E666101A20243600211549 /* Pokemon.m in Sources */,
 				50E665F11A2023F600211549 /* ViewController.m in Sources */,
 				50E665E81A2023F600211549 /* main.m in Sources */,
 			);
@@ -347,6 +354,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = NewMCMs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -357,6 +365,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = NewMCMs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
