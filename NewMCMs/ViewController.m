@@ -11,9 +11,29 @@
 
 @interface ViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property NSMutableArray *pokemons;
+@property (strong, nonatomic) IBOutlet UITableView *pokemonTableView;
+@property (strong, nonatomic) IBOutlet UITextField *txtPokemon;
+@property (strong, nonatomic) IBOutlet UITextField *txtStage;
+@property (strong, nonatomic) IBOutlet UITextField *txtLevel;
+
 @end
 
 @implementation ViewController
+- (IBAction)onAddButtonPressed:(UIButton *)sender {
+    Pokemon *pokemon = [[Pokemon alloc] initWithName:self.txtPokemon.text
+                                               stage:[self.txtStage.text intValue]
+                                               level:[self.txtLevel.text intValue]];
+    [self.pokemons addObject:pokemon];
+    [self.pokemonTableView reloadData];
+
+    self.txtPokemon.text = @"";
+    self.txtStage.text = @"";
+    self.txtLevel.text = @"";
+
+    for (Pokemon *poke in self.pokemons) {
+        NSLog(@"%@, %d, %d",poke.name, poke.stage, poke.level);
+    }
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -31,9 +51,7 @@
 
     self.pokemons = [[NSMutableArray alloc]initWithObjects:charmander, charmeleon, charazard, nil];
     
-    for (Pokemon *poke in self.pokemons) {
-        NSLog(@"%@",poke.name);
-    }
+
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
